@@ -1,5 +1,5 @@
 
-var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+//var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 var PORT = ( process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT ) || 3500;
 
 var express = require("express");
@@ -12,7 +12,8 @@ app.use('/', function(req, res){
 	res.send("Hello World!");
 });
 
-app.listen(PORT, IP_ADDRESS, function() {
-
-	console.log("Server started on port: " + IP_ADDRESS + ":" +  PORT);				
+//app.listen(PORT, IP_ADDRESS, function() {
+app.listen(PORT, function() {				
+	console.log("Server started on port: " +  PORT);
+//	console.log("Server started on port: " + IP_ADDRESS + ":" +  PORT);				
 });
